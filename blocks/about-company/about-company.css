@@ -1,0 +1,115 @@
+.about-company-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.about-company {
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-border-color: #d52331;
+  --card-border-width: 8px;
+  --card-radius: 12px;
+  --card-padding: 32px;
+  --label-color: #d52331;
+  --heading-color: #3e3e3e;
+  --desc-color: #7a7979;
+  --cta-bg: #d52331;
+  --cta-color: #fff;
+  --cta-radius: 9999px;
+  --cta-padding: 12px 20px;
+
+  position: relative;
+  background: linear-gradient(to left bottom, #cbcbcb, #f4f4f4);
+  padding: 80px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.about-company .about-company-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.about-company .about-company-bg p {
+  margin: 0;
+  height: 100%;
+}
+
+.about-company .about-company-bg picture,
+.about-company .about-company-bg img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  filter: saturate(0);
+  max-width: none;
+}
+
+.about-company .about-company-card {
+  position: relative;
+  z-index: 1;
+  background: var(--card-bg);
+  border-left: var(--card-border-width) solid var(--card-border-color);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  max-width: 600px;
+  width: 58%;
+}
+
+.about-company .about-company-card > p:first-child {
+  color: var(--label-color);
+  font-size: 13px;
+  margin: 0 0 12px;
+  font-weight: 400;
+}
+
+.about-company .about-company-card h2 {
+  color: var(--heading-color);
+  font-size: 30px;
+  font-weight: 300;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.about-company .about-company-card > p:nth-child(3) {
+  color: var(--desc-color);
+  font-size: 16px;
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+
+main .about-company a.button:any-link {
+  display: inline-block;
+  background: var(--cta-bg);
+  color: var(--cta-color);
+  border-radius: var(--cta-radius);
+  padding: var(--cta-padding);
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+main .about-company a.button:any-link:hover {
+  background: #b91d29;
+}
+
+@media (width >= 900px) {
+  .about-company {
+    --card-padding: 64px;
+  }
+
+  .about-company .about-company-card h2 {
+    font-size: 39px;
+  }
+}
+
+@media (width < 768px) {
+  .about-company .about-company-card {
+    width: 90%;
+  }
+}

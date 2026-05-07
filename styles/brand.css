@@ -1,0 +1,12 @@
+:root {
+  --heading-font-family: "Inter", system-ui, sans-serif;
+  --body-font-family: "Inter", system-ui, sans-serif;
+  --background-color: #ffffff;
+  --text-color: rgb(77, 77, 77);
+  --link-color: rgb(0, 23, 38);
+  --link-hover-color: rgb(0, 23, 38);
+  --section-padding: 0px;
+  --nav-height: 78px;
+}
+
+html, body { overflow: auto !important; }

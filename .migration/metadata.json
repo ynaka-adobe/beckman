@@ -1,0 +1,72 @@
+{
+  "canonical": "https://www.beckman.com",
+  "description": "Beckman Coulter Life Sciences is a leader in scientific research instruments and reagents focused on accelerating answers and enabling new discoveries.",
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "ResearchOrganization",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "telephone": "1-800-742-2345"
+      },
+      "description": "Beckman Coulter Life Sciences is a leader in scientific research instruments and reagents focused on accelerating answers and enabling new discoveries.",
+      "logo": "https://media.beckman.com/-/media/corporate/logos/bcls_logo_horizontal_2-color.svg",
+      "name": "Beckman Coulter Life Sciences",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Danaher Corporation",
+        "url": "https://danaher.com/"
+      },
+      "sameAs": [
+        "https://www.facebook.com/BCILifeSciences/",
+        "https://www.linkedin.com/company/beckman-coulter-ls/",
+        "https://twitter.com/BCILifeSciences"
+      ],
+      "url": "https://www.beckman.com"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US",
+        "addressLocality": "Indianapolis",
+        "addressRegion": "IN",
+        "postalCode": "46268",
+        "streetAddress": "5350 Lakeview Pkwy S Drive"
+      },
+      "description": "Beckman Coulter Life Sciences is a leader in scientific research instruments and reagents focused on accelerating answers and enabling new discoveries.",
+      "name": "Beckman Coulter Life Sciences",
+      "telephone": "1-800-742-2345"
+    },
+    {
+      "@context": "https://schema.org/",
+      "@type": "WebSite",
+      "name": "Beckman Coulter Life Sciences",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "query-input": "required name=search_term_string",
+        "target": "https://www.beckman.com/search#q={search_term_string}"
+      },
+      "url": "https://www.beckman.com"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "item": {
+            "@id": "https://www.beckman.com",
+            "name": "Home"
+          },
+          "position": 1
+        }
+      ]
+    }
+  ],
+  "ogTags": {},
+  "title": "Beckman Coulter Life Sciences",
+  "twitterTags": {}
+}

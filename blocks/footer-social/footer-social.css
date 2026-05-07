@@ -1,0 +1,17 @@
+.footer-social ul {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-social ul li a {
+  font-size: 14px;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.footer-social ul li a:hover {
+  text-decoration: underline;
+}

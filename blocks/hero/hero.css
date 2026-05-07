@@ -1,37 +1,96 @@
-.hero-container .hero-wrapper {
-  max-width: unset;
-  padding: 0;
+.hero-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+main > .section:has(.hero-wrapper) {
+  margin: 0;
 }
 
 .hero {
+  --hero-gradient: linear-gradient(45deg, rgb(118, 40, 88), rgb(213, 35, 49) 34.62%, rgb(213, 35, 49) 82.86%, rgb(238, 73, 86));
   position: relative;
-  padding: 40px 24px;
+  display: flex;
+  min-height: 545px;
+  overflow: hidden;
+}
+
+.hero > div {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.hero > div > div:first-child {
+  position: relative;
+  width: 100%;
   min-height: 300px;
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
-}
-
-.hero img {
-  object-fit: cover;
-  width: 100%;
+.hero > div > div:first-child picture {
+  display: block;
   height: 100%;
 }
 
+.hero > div > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero > div > div:last-child {
+  background: var(--hero-gradient);
+  color: #fff;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero > div > div:last-child h1 {
+  font-size: 2rem;
+  font-weight: 200;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+  color: #fff;
+}
+
+.hero > div > div:last-child p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #fde8ea;
+  margin: 0;
+}
+
 @media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
+  .hero > div {
+    flex-direction: row;
+  }
+
+  .hero > div > div:first-child {
+    position: absolute;
+    inset: 0;
+    width: 66%;
+  }
+
+  .hero > div > div:last-child {
+    position: relative;
+    margin-left: auto;
+    width: 42%;
+    padding: 3.5rem 2rem 3.5rem 2.5rem;
+    overflow: hidden;
+  }
+
+  .hero > div > div:last-child h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero > div > div:last-child p {
+    font-size: 16px;
+    line-height: 1.7;
+    width: 90%;
   }
 }

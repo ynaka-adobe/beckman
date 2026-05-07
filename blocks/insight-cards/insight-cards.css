@@ -1,0 +1,134 @@
+/* Override section container width for wider card grid */
+main > .section.insight-cards-container > div {
+  max-width: 1320px;
+}
+
+/* Section heading */
+.section.insight-cards-container h2 {
+  font-size: 39px;
+  font-weight: 300;
+  color: var(--text-color);
+  margin-bottom: 32px;
+  margin-top: 0;
+}
+
+.insight-cards {
+  --card-gap: 24px;
+  --category-color: rgb(213, 35, 49);
+  --card-text-color: rgb(77, 77, 77);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--card-gap);
+  padding: 0;
+}
+
+/* Card link wrapper */
+.insight-cards > a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Row inside the card link */
+.insight-cards > a > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image cell */
+.insight-cards > a > div > div:first-child {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.insight-cards > a > div > div:first-child picture {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.insight-cards > a > div > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0);
+  transition: transform 0.5s ease-out, filter 0.5s ease-out;
+}
+
+.insight-cards > a:hover > div > div:first-child img {
+  transform: scale(1.02);
+  filter: saturate(1);
+}
+
+/* Text cell */
+.insight-cards > a > div > div:last-child {
+  padding-top: 6px;
+}
+
+.insight-cards > a > div > div:last-child p:first-child {
+  color: var(--category-color);
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.insight-cards > a > div > div:last-child p:last-child {
+  color: var(--card-text-color);
+  font-size: 16px;
+  font-weight: 400;
+  margin: 4px 0 0;
+  line-height: 1.4;
+}
+
+/* Reset button styles applied by EDS */
+main .insight-cards .button-container {
+  display: inline;
+}
+
+main .insight-cards a.button:any-link {
+  background: none;
+  border: none;
+  color: var(--card-text-color);
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+}
+
+/* Hover state on description text */
+.insight-cards > a:hover > div > div:last-child p:last-child,
+.insight-cards > a:hover > div > div:last-child p:last-child span {
+  color: var(--category-color);
+}
+
+/* Underline animation on description */
+.insight-cards > a > div > div:last-child p:last-child span {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s, color 0.3s;
+}
+
+.insight-cards > a:hover > div > div:last-child p:last-child span {
+  background-size: 100% 1px;
+}
+
+@media (width >= 600px) {
+  .insight-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .insight-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
