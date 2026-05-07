@@ -1,0 +1,122 @@
+{
+  "url": "https://www.beckman.com/",
+  "fragments": [
+    {
+      "path": "/nav",
+      "children": [
+        {
+          "type": "block",
+          "name": "nav-bar",
+          "id": "rc1c1",
+          "bounds": { "x": 0, "y": 0, "width": 1579, "height": 230 }
+        }
+      ]
+    },
+    {
+      "path": "/index",
+      "children": [
+        {
+          "type": "section",
+          "children": [
+            {
+              "type": "block",
+              "name": "hero",
+              "id": "rc1c2c1",
+              "bounds": { "x": 0, "y": 230, "width": 1579, "height": 648 }
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "children": [
+            {
+              "type": "block",
+              "name": "topics-nav",
+              "id": "rc1c2c2",
+              "bounds": { "x": 0, "y": 878, "width": 1579, "height": 51 }
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "children": [
+            {
+              "type": "block",
+              "name": "insight-cards",
+              "id": "rc1c2c3",
+              "bounds": { "x": 0, "y": 929, "width": 1579, "height": 929 }
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "style": "gradient",
+          "children": [
+            {
+              "type": "block",
+              "name": "promo-banner",
+              "id": "rc1c2c4",
+              "bounds": { "x": 0, "y": 1857, "width": 1579, "height": 647 }
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "children": [
+            {
+              "type": "default-content",
+              "id": "rc1c2c5",
+              "bounds": { "x": 0, "y": 2504, "width": 1579, "height": 53 }
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "children": [
+            {
+              "type": "block",
+              "name": "events-carousel",
+              "id": "rc1c2c6",
+              "bounds": { "x": 22, "y": 2557, "width": 1536, "height": 667 }
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "style": "off-white",
+          "children": [
+            {
+              "type": "block",
+              "name": "service-promo",
+              "id": "rc1c2c7",
+              "bounds": { "x": 0, "y": 3224, "width": 1579, "height": 787 }
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "style": "gradient",
+          "children": [
+            {
+              "type": "block",
+              "name": "about-company",
+              "id": "rc1c2c8",
+              "bounds": { "x": 0, "y": 4011, "width": 1579, "height": 618 }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/footer",
+      "children": [
+        {
+          "type": "block",
+          "name": "site-footer",
+          "id": "rc1c3",
+          "bounds": { "x": 0, "y": 4629, "width": 1579, "height": 913 }
+        }
+      ]
+    }
+  ]
+}

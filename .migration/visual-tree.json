@@ -1,0 +1,437 @@
+{
+  "nodeMap": {
+    "r": "body",
+    "rc1": "#wrapper",
+    "rc1c1": "#mainNav",
+    "rc1c1c1": "#mainNav > div:nth-child(1)",
+    "rc1c1c2": "#mainNav > div.flex-group.fluid-container.Navbar",
+    "rc1c2": "#main",
+    "rc1c2c1": "#main > div.main-holder > div.relative.justify-end.sm\\:flex",
+    "rc1c2c2": "#main > div.main-holder > nav",
+    "rc1c2c3": "#main > div.main-holder > div:nth-child(5)",
+    "rc1c2c3c1": "#latest > h2",
+    "rc1c2c3c2": "#latest > div",
+    "rc1c2c4": "#main > div.main-holder > div.gradient-section-background",
+    "rc1c2c5": "#main > div.main-holder > div.mx-auto.bg-brand-gray-50.p-2",
+    "rc1c2c6": "#events",
+    "rc1c2c6c1": "#events > div.mb-2.flex.flex-col.justify-between.px-2.sm\\:mb-4.sm\\:flex-row.sm\\:items-center.lg\\:mb-7",
+    "rc1c2c6c2": "#events > div.swiper.px-2.swiper-initialized.swiper-horizontal.swiper-backface-hidden",
+    "rc1c2c7": "#service",
+    "rc1c2c8": "#about",
+    "rc1c2c8c1": "#about > div",
+    "rc1c2c8c2": "#about > img",
+    "rc1c3": "#wrapper > div.footer2023",
+    "rc1c3c1": "#wrapper > div.footer2023 > div.footer2023__inner",
+    "rc1c3c2": "#wrapper > div.footer2023 > div.footer2023__legal",
+    "rc1c3c2c1": "#wrapper > div.footer2023 > div.footer2023__legal > div > div:nth-child(1)",
+    "rc1c3c2c2": "#wrapper > div.footer2023 > div.footer2023__legal > div > div:nth-child(2)",
+    "rc1c3c3": "#wrapper > div.footer2023 > div.footer2023__opcoLogos",
+    "rc2": "#font-resize-frame-808"
+  },
+  "text": "r @0,0 1579x5602\n  rc1 @0,0 1579x5602\n    rc1c1 @0,0 1579x230\n      rc1c1c1 [3x1] @0,0 1579x69 \"document.addEventListener(\"Cov...\"\n      rc1c1c2 @0,69 1579x161 \"Menu Products Instruments Prod...\"\n    rc1c2 [main] @0,230 1579x4399\n      rc1c2c1 [2x1] @0,230 1579x648\n      rc1c2c2 [5x1] @0,878 1579x51 \"Fresh insights Popular topics ...\"\n      rc1c2c3 @0,929 1579x929\n        rc1c2c3c1 @54,969 1472x52 \"Fresh insights\"\n        rc1c2c3c2 [4x2] @54,1077 1472x741 \"Smart. Small. Powerful. Meet B...\"\n      rc1c2c4 [2x1] [bg:gradient] @0,1857 1579x647 \"SPRI Bead Technology -> Centri...\"\n      rc1c2c5 @0,2504 1579x53 \"Learn how we’re related to\"\n      rc1c2c6 @22,2557 1536x667\n        rc1c2c6c1 [2x1] @37,2685 1506x52 \"Upcoming events See all events...\"\n        rc1c2c6c2 [2x1] @37,2793 1506x303 \"Tradeshow Loading... May 11 - ...\"\n      rc1c2c7 [2x1] @0,3224 1579x787 \"Expect outstanding service Ser...\"\n      rc1c2c8 [bg:gradient] @0,4011 1579x618\n        rc1c2c8c1 @150,4011 1280x618 \"Our company A Leader in Life (...\"\n        rc1c2c8c2 @0,4011 1579x618\n    rc1c3 @0,4629 1579x913\n      rc1c3c1 [2x2] @22,4629 1536x604 \"Stay up to date with our newsl...\"\n      rc1c3c2 @22,5233 1536x252\n        rc1c3c2c1 @38,5257 1504x46 \"© 2000-2026 Beckman Coulter, I...\"\n        rc1c3c2c2 @38,5382 1504x78 \"NOT ALL PRODUCTS ARE AVAILABLE...\"\n      rc1c3c3 [5x2] @0,5484 1579x58 \".st0{fill-rule:evenodd;clip-ru...\"\n  rc2 @-9999,-9999 1600x10\n",
+  "tree": {
+    "bounds": {
+      "height": 5602,
+      "width": 1579,
+      "x": 0,
+      "y": 0
+    },
+    "children": [
+      {
+        "bounds": {
+          "height": 5602,
+          "width": 1579,
+          "x": 0,
+          "y": 0
+        },
+        "children": [
+          {
+            "background": {
+              "raw": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box",
+              "source": "css",
+              "type": "color",
+              "value": "rgb(255, 255, 255)"
+            },
+            "bounds": {
+              "height": 230,
+              "width": 1579,
+              "x": 0,
+              "y": 0
+            },
+            "children": [
+              {
+                "bounds": {
+                  "height": 69,
+                  "width": 1579,
+                  "x": 0,
+                  "y": 0
+                },
+                "children": [],
+                "className": "flex-group",
+                "layout": "3x1",
+                "selector": "#mainNav > div:nth-child(1)",
+                "tag": "DIV",
+                "text": "document.addEventListener(\"Cov"
+              },
+              {
+                "bounds": {
+                  "height": 161,
+                  "width": 1579,
+                  "x": 0,
+                  "y": 69
+                },
+                "children": [],
+                "className": "flex-group",
+                "selector": "#mainNav > div.flex-group.fluid-container.Navbar",
+                "tag": "DIV",
+                "text": "Menu Products Instruments Prod"
+              }
+            ],
+            "className": "GlobalHeader",
+            "id": "mainNav",
+            "selector": "#mainNav",
+            "tag": "HEADER"
+          },
+          {
+            "bounds": {
+              "height": 4399,
+              "width": 1579,
+              "x": 0,
+              "y": 230
+            },
+            "children": [
+              {
+                "background": {
+                  "raw": "rgb(244, 244, 244) none repeat scroll 0% 0% / auto padding-box border-box",
+                  "source": "css",
+                  "type": "color",
+                  "value": "rgb(244, 244, 244)"
+                },
+                "bounds": {
+                  "height": 648,
+                  "width": 1579,
+                  "x": 0,
+                  "y": 230
+                },
+                "children": [],
+                "className": "relative",
+                "layout": "2x1",
+                "selector": "#main > div.main-holder > div.relative.justify-end.sm\\:flex",
+                "tag": "DIV"
+              },
+              {
+                "background": {
+                  "raw": "rgba(255, 255, 255, 0.85) none repeat scroll 0% 0% / auto padding-box border-box",
+                  "source": "css",
+                  "type": "color",
+                  "value": "rgba(255, 255, 255, 0.85)"
+                },
+                "bounds": {
+                  "height": 51,
+                  "width": 1579,
+                  "x": 0,
+                  "y": 878
+                },
+                "children": [],
+                "className": "sticky",
+                "layout": "5x1",
+                "selector": "#main > div.main-holder > nav",
+                "tag": "NAV",
+                "text": "Fresh insights Popular topics "
+              },
+              {
+                "bounds": {
+                  "height": 929,
+                  "width": 1579,
+                  "x": 0,
+                  "y": 929
+                },
+                "children": [
+                  {
+                    "bounds": {
+                      "height": 52,
+                      "width": 1472,
+                      "x": 54,
+                      "y": 969
+                    },
+                    "children": [],
+                    "className": "mb-4",
+                    "selector": "#latest > h2",
+                    "tag": "H2",
+                    "text": "Fresh insights"
+                  },
+                  {
+                    "bounds": {
+                      "height": 741,
+                      "width": 1472,
+                      "x": 54,
+                      "y": 1077
+                    },
+                    "children": [],
+                    "className": "grid",
+                    "layout": "4x2",
+                    "selector": "#latest > div",
+                    "tag": "DIV",
+                    "text": "Smart. Small. Powerful. Meet B"
+                  }
+                ],
+                "selector": "#main > div.main-holder > div:nth-child(5)",
+                "tag": "DIV"
+              },
+              {
+                "background": {
+                  "raw": "rgba(0, 0, 0, 0) linear-gradient(rgb(255, 255, 255), rgb(247, 247, 247)) repeat scroll 0% 0% / auto padding-box border-box",
+                  "source": "css",
+                  "type": "gradient",
+                  "value": "linear-gradient(rgb(255, 255, 255), rgb(247, 247, 247))"
+                },
+                "bounds": {
+                  "height": 647,
+                  "width": 1579,
+                  "x": 0,
+                  "y": 1857
+                },
+                "children": [],
+                "className": "gradient-section-background",
+                "layout": "2x1",
+                "selector": "#main > div.main-holder > div.gradient-section-background",
+                "tag": "DIV",
+                "text": "SPRI Bead Technology -> Centri"
+              },
+              {
+                "background": {
+                  "raw": "rgb(244, 244, 244) none repeat scroll 0% 0% / auto padding-box border-box",
+                  "source": "css",
+                  "type": "color",
+                  "value": "rgb(244, 244, 244)"
+                },
+                "bounds": {
+                  "height": 53,
+                  "width": 1579,
+                  "x": 0,
+                  "y": 2504
+                },
+                "children": [],
+                "className": "mx-auto",
+                "selector": "#main > div.main-holder > div.mx-auto.bg-brand-gray-50.p-2",
+                "tag": "DIV",
+                "text": "Learn how we’re related to"
+              },
+              {
+                "bounds": {
+                  "height": 667,
+                  "width": 1536,
+                  "x": 22,
+                  "y": 2557
+                },
+                "children": [
+                  {
+                    "bounds": {
+                      "height": 52,
+                      "width": 1506,
+                      "x": 37,
+                      "y": 2685
+                    },
+                    "children": [],
+                    "className": "mb-2",
+                    "layout": "2x1",
+                    "selector": "#events > div.mb-2.flex.flex-col.justify-between.px-2.sm\\:mb-4.sm\\:flex-row.sm\\:items-center.lg\\:mb-7",
+                    "tag": "DIV",
+                    "text": "Upcoming events See all events"
+                  },
+                  {
+                    "bounds": {
+                      "height": 303,
+                      "width": 1506,
+                      "x": 37,
+                      "y": 2793
+                    },
+                    "children": [],
+                    "className": "swiper",
+                    "layout": "2x1",
+                    "selector": "#events > div.swiper.px-2.swiper-initialized.swiper-horizontal.swiper-backface-hidden",
+                    "tag": "DIV",
+                    "text": "Tradeshow Loading... May 11 - "
+                  }
+                ],
+                "className": "container",
+                "id": "events",
+                "selector": "#events",
+                "tag": "DIV"
+              },
+              {
+                "background": {
+                  "raw": "rgb(250, 250, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+                  "source": "css",
+                  "type": "color",
+                  "value": "rgb(250, 250, 250)"
+                },
+                "bounds": {
+                  "height": 787,
+                  "width": 1579,
+                  "x": 0,
+                  "y": 3224
+                },
+                "children": [],
+                "className": "bg-brand-off-white",
+                "id": "service",
+                "layout": "2x1",
+                "selector": "#service",
+                "tag": "DIV",
+                "text": "Expect outstanding service Ser"
+              },
+              {
+                "background": {
+                  "raw": "rgba(0, 0, 0, 0) linear-gradient(to left bottom, rgb(203, 203, 203), rgb(244, 244, 244)) repeat scroll 0% 0% / auto padding-box border-box",
+                  "source": "css",
+                  "type": "gradient",
+                  "value": "linear-gradient(to left bottom, rgb(203, 203, 203), rgb(244, 244, 244))"
+                },
+                "bounds": {
+                  "height": 618,
+                  "width": 1579,
+                  "x": 0,
+                  "y": 4011
+                },
+                "children": [
+                  {
+                    "bounds": {
+                      "height": 618,
+                      "width": 1280,
+                      "x": 150,
+                      "y": 4011
+                    },
+                    "children": [],
+                    "className": "relative",
+                    "selector": "#about > div",
+                    "tag": "DIV",
+                    "text": "Our company A Leader in Life ("
+                  },
+                  {
+                    "bounds": {
+                      "height": 618,
+                      "width": 1579,
+                      "x": 0,
+                      "y": 4011
+                    },
+                    "children": [],
+                    "className": "absolute",
+                    "selector": "#about > img",
+                    "tag": "IMG"
+                  }
+                ],
+                "className": "relative",
+                "id": "about",
+                "selector": "#about",
+                "tag": "DIV"
+              }
+            ],
+            "id": "main",
+            "role": "main",
+            "selector": "#main",
+            "tag": "DIV"
+          },
+          {
+            "bounds": {
+              "height": 913,
+              "width": 1579,
+              "x": 0,
+              "y": 4629
+            },
+            "children": [
+              {
+                "bounds": {
+                  "height": 604,
+                  "width": 1536,
+                  "x": 22,
+                  "y": 4629
+                },
+                "children": [],
+                "className": "footer2023__inner",
+                "layout": "2x2",
+                "selector": "#wrapper > div.footer2023 > div.footer2023__inner",
+                "tag": "DIV",
+                "text": "Stay up to date with our newsl"
+              },
+              {
+                "bounds": {
+                  "height": 252,
+                  "width": 1536,
+                  "x": 22,
+                  "y": 5233
+                },
+                "children": [
+                  {
+                    "bounds": {
+                      "height": 46,
+                      "width": 1504,
+                      "x": 38,
+                      "y": 5257
+                    },
+                    "children": [],
+                    "className": "footer2023__legal__row",
+                    "selector": "#wrapper > div.footer2023 > div.footer2023__legal > div > div:nth-child(1)",
+                    "tag": "DIV",
+                    "text": "© 2000-2026 Beckman Coulter, I"
+                  },
+                  {
+                    "bounds": {
+                      "height": 78,
+                      "width": 1504,
+                      "x": 38,
+                      "y": 5382
+                    },
+                    "children": [],
+                    "className": "footer2023__legal__row",
+                    "selector": "#wrapper > div.footer2023 > div.footer2023__legal > div > div:nth-child(2)",
+                    "tag": "DIV",
+                    "text": "NOT ALL PRODUCTS ARE AVAILABLE"
+                  }
+                ],
+                "className": "footer2023__legal",
+                "selector": "#wrapper > div.footer2023 > div.footer2023__legal",
+                "tag": "DIV"
+              },
+              {
+                "bounds": {
+                  "height": 58,
+                  "width": 1579,
+                  "x": 0,
+                  "y": 5484
+                },
+                "children": [],
+                "className": "footer2023__opcoLogos",
+                "layout": "5x2",
+                "selector": "#wrapper > div.footer2023 > div.footer2023__opcoLogos",
+                "tag": "DIV",
+                "text": ".st0{fill-rule:evenodd;clip-ru"
+              }
+            ],
+            "className": "footer2023",
+            "selector": "#wrapper > div.footer2023",
+            "tag": "DIV"
+          }
+        ],
+        "id": "wrapper",
+        "selector": "#wrapper",
+        "tag": "DIV"
+      },
+      {
+        "bounds": {
+          "height": 10,
+          "width": 1600,
+          "x": -9999,
+          "y": -9999
+        },
+        "children": [],
+        "className": "font-resize-helper",
+        "id": "font-resize-frame-808",
+        "selector": "#font-resize-frame-808",
+        "tag": "IFRAME"
+      }
+    ],
+    "className": "body",
+    "selector": "body",
+    "tag": "BODY"
+  }
+}

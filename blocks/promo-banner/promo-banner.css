@@ -1,0 +1,138 @@
+.promo-banner-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.promo-banner {
+  --block-bg: linear-gradient(rgb(255, 255, 255), rgb(247, 247, 247));
+  --block-text: rgb(77, 77, 77);
+  --block-padding: 80px 24px;
+  --block-gap: 16px;
+  --brand-primary: rgb(213, 35, 49);
+
+  background: var(--block-bg);
+  color: var(--block-text);
+  padding: var(--block-padding);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.promo-banner > div:first-child {
+  margin-bottom: 24px;
+}
+
+.promo-banner h2 {
+  font-size: 39px;
+  font-weight: 300;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.promo-banner > div:first-child p {
+  color: var(--brand-primary);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Card rows */
+.promo-banner > div:not(:first-child) {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--block-gap);
+  margin-bottom: var(--block-gap);
+}
+
+/* Card cells */
+.promo-banner > div:not(:first-child) > div {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 8px rgba(2, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s ease;
+}
+
+.promo-banner > div:not(:first-child) > div:hover {
+  background: linear-gradient(135deg, #d52331, #8b1a23);
+}
+
+.promo-banner > div:not(:first-child) > div:hover p,
+.promo-banner > div:not(:first-child) > div:hover a {
+  color: #fff;
+}
+
+.promo-banner > div:not(:first-child) > div p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+main .promo-banner a.button:any-link {
+  color: var(--block-text);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+main .promo-banner > div:not(:first-child) > div:hover a.button:any-link {
+  color: #fff;
+}
+
+@media (width >= 900px) {
+  .promo-banner {
+    --block-padding: 80px 48px;
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    grid-template-rows: auto auto;
+    gap: 0 32px;
+  }
+
+  .promo-banner > div:first-child {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    margin-bottom: 0;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 24px;
+  }
+
+  .promo-banner > div:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .promo-banner > div:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .promo-banner > div:not(:first-child) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .promo-banner > div:not(:first-child) > div {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 140px;
+  }
+}
+
+/* Arrow styling */
+.promo-banner .promo-banner-arrow {
+  display: block;
+  text-align: right;
+  font-size: 20px;
+  font-weight: 300;
+  color: #999;
+  margin-top: auto;
+  align-self: flex-end;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.promo-banner > div:not(:first-child) > div:hover .promo-banner-arrow {
+  color: #fff;
+  transform: translateX(4px);
+}

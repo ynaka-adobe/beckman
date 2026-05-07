@@ -1,0 +1,64 @@
+{
+  "colors": {
+    "background": "#ffffff",
+    "dark": "rgb(255, 255, 255)",
+    "light": "",
+    "link": "rgb(0, 23, 38)",
+    "linkHover": null,
+    "text": "rgb(77, 77, 77)"
+  },
+  "favicons": [
+    {
+      "rel": "icon",
+      "type": "image/svg+xml",
+      "url": "https://www.beckman.com/favicon.ico"
+    }
+  ],
+  "fonts": {
+    "body": {
+      "family": "Inter",
+      "familySet": "Inter, system-ui, sans-serif"
+    },
+    "heading": {
+      "family": "Inter",
+      "familySet": "Inter, system-ui, sans-serif"
+    },
+    "headingSizes": {
+      "l": {
+        "desktop": "20px",
+        "mobile": "24px"
+      },
+      "m": {
+        "desktop": "20px",
+        "mobile": "20px"
+      },
+      "s": {
+        "desktop": "10px",
+        "mobile": "18px"
+      },
+      "xl": {
+        "desktop": "39.056px",
+        "mobile": "28px"
+      },
+      "xs": {
+        "desktop": "",
+        "mobile": "16px"
+      },
+      "xxl": {
+        "desktop": "61.04px",
+        "mobile": "36px"
+      }
+    },
+    "sources": {
+      "googleFonts": [
+        "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      ],
+      "typekit": null
+    }
+  },
+  "spacing": {
+    "contentMaxWidth": "100%",
+    "navHeight": "77.7969px",
+    "sectionPadding": "0px"
+  }
+}

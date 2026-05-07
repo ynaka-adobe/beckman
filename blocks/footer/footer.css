@@ -1,12 +1,24 @@
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #fff;
+  font-size: 14px;
+  font-family: var(--body-font-family);
+  color: var(--text-color);
 }
 
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  max-width: 1536px;
+  padding: 96px 16px 48px;
+}
+
+footer .footer .section {
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer .section > div {
+  max-width: none;
+  padding: 0;
 }
 
 footer .footer p {
@@ -15,6 +27,6 @@ footer .footer p {
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 96px 32px 48px;
   }
 }

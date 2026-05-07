@@ -1,0 +1,68 @@
+.footer-columns > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (width >= 900px) {
+  .footer-columns > div {
+    flex-direction: row;
+    gap: 48px;
+  }
+
+  .footer-columns > div > div:first-child {
+    flex: 1;
+  }
+
+  .footer-columns > div > div:nth-child(2),
+  .footer-columns > div > div:nth-child(3) {
+    flex: 0 0 auto;
+  }
+}
+
+.footer-columns h4 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 8px;
+  color: var(--text-color);
+}
+
+.footer-columns p {
+  font-size: 14px;
+  color: var(--text-color);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.footer-columns ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-columns ul li {
+  margin-bottom: 8px;
+}
+
+.footer-columns ul li a {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* Primary links (Careers, Contact, etc.) - red */
+.footer-columns > div > div:nth-child(2) ul li a {
+  color: rgb(234, 28, 44);
+}
+
+.footer-columns > div > div:nth-child(2) ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Secondary links (Copyright, Legal, etc.) */
+.footer-columns > div > div:nth-child(3) ul li a {
+  color: var(--text-color);
+}
+
+.footer-columns > div > div:nth-child(3) ul li a:hover {
+  text-decoration: underline;
+}
