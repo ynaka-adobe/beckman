@@ -4,22 +4,14 @@
 }
 
 .about-company {
-  --card-bg: rgba(255, 255, 255, 0.95);
-  --card-border-color: #d52331;
-  --card-border-width: 8px;
+  --card-bg: rgb(255 255 255 / 95%);
+  --card-border-width: 4px;
   --card-radius: 12px;
   --card-padding: 32px;
-  --label-color: #d52331;
-  --heading-color: #3e3e3e;
-  --desc-color: #7a7979;
-  --cta-bg: #d52331;
-  --cta-color: #fff;
-  --cta-radius: 9999px;
-  --cta-padding: 12px 20px;
 
   position: relative;
   background: linear-gradient(to left bottom, #cbcbcb, #f4f4f4);
-  padding: 80px 24px;
+  padding: 64px 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,6 +19,7 @@
   overflow: hidden;
 }
 
+/* Background image layer */
 .about-company .about-company-bg {
   position: absolute;
   inset: 0;
@@ -49,45 +42,50 @@
   max-width: none;
 }
 
+/* Content card */
 .about-company .about-company-card {
   position: relative;
   z-index: 1;
   background: var(--card-bg);
-  border-left: var(--card-border-width) solid var(--card-border-color);
+  border-left: var(--card-border-width) solid var(--brand-primary);
   border-radius: var(--card-radius);
   padding: var(--card-padding);
   max-width: 600px;
-  width: 58%;
+  width: 90%;
 }
 
+/* Eyebrow label */
 .about-company .about-company-card > p:first-child {
-  color: var(--label-color);
-  font-size: 13px;
+  color: var(--brand-primary);
+  font-size: 14px;
   margin: 0 0 12px;
   font-weight: 400;
 }
 
+/* Heading */
 .about-company .about-company-card h2 {
-  color: var(--heading-color);
+  color: var(--text-color-light);
   font-size: 30px;
   font-weight: 300;
   margin: 0 0 8px;
   line-height: 1.3;
 }
 
+/* Description */
 .about-company .about-company-card > p:nth-child(3) {
-  color: var(--desc-color);
+  color: var(--text-color-lighter);
   font-size: 16px;
   margin: 0 0 16px;
   line-height: 1.5;
 }
 
+/* CTA button */
 main .about-company a.button:any-link {
   display: inline-block;
-  background: var(--cta-bg);
-  color: var(--cta-color);
-  border-radius: var(--cta-radius);
-  padding: var(--cta-padding);
+  background: var(--brand-primary);
+  color: var(--background-color);
+  border-radius: 9999px;
+  padding: 12px 20px;
   font-size: 14px;
   font-weight: 400;
   text-decoration: none;
@@ -95,21 +93,23 @@ main .about-company a.button:any-link {
 }
 
 main .about-company a.button:any-link:hover {
-  background: #b91d29;
+  background: var(--brand-primary-hover);
 }
 
+/* Desktop */
 @media (width >= 900px) {
   .about-company {
+    --card-border-width: 8px;
     --card-padding: 64px;
+
+    padding: 128px 24px;
+  }
+
+  .about-company .about-company-card {
+    width: 58%;
   }
 
   .about-company .about-company-card h2 {
-    font-size: 39px;
-  }
-}
-
-@media (width < 768px) {
-  .about-company .about-company-card {
-    width: 90%;
+    font-size: var(--heading-font-size-xxl);
   }
 }

@@ -57,7 +57,7 @@ function focusNavSection() {
  * @param {Boolean} expanded Whether the element should be expanded or collapsed
  */
 function toggleAllNavSections(sections, expanded = false) {
-  sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
+  sections.querySelectorAll('.nav-sections > ul > li, .nav-sections .default-content-wrapper > ul > li').forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
   });
 }
@@ -147,7 +147,8 @@ async function buildBreadcrumbs() {
   const breadcrumbs = document.createElement('nav');
   breadcrumbs.className = 'breadcrumbs';
 
-  const crumbs = await buildBreadcrumbsFromNavTree(document.querySelector('.nav-sections'), document.location.href);
+  const navTree = document.querySelector('.nav-sections');
+  const crumbs = await buildBreadcrumbsFromNavTree(navTree, document.location.href);
 
   const ol = document.createElement('ol');
   ol.append(...crumbs.map((item) => {
@@ -182,24 +183,48 @@ export default async function decorate(block) {
   block.textContent = '';
   const nav = document.createElement('nav');
   nav.id = 'nav';
-  while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
-  const classes = ['brand', 'sections', 'tools'];
-  classes.forEach((c, i) => {
-    const section = nav.children[i];
-    if (section) section.classList.add(`nav-${c}`);
-  });
+  // Extract content from fragment's section/default-content-wrapper.
+  // The nav.plain.html uses <hr> to separate: brand | sections | tools.
+  const section = fragment.querySelector('.section');
+  if (section) {
+    const dcw = section.querySelector('.default-content-wrapper');
+    if (dcw) {
+      // Split content at <hr> elements into logical groups
+      const groups = [];
+      let current = [];
+      [...dcw.children].forEach((child) => {
+        if (child.tagName === 'HR') {
+          if (current.length) groups.push(current);
+          current = [];
+        } else {
+          current.push(child);
+        }
+      });
+      if (current.length) groups.push(current);
+
+      const classes = ['brand', 'sections', 'tools'];
+      groups.forEach((group, i) => {
+        const wrapper = document.createElement('div');
+        if (classes[i]) wrapper.classList.add(`nav-${classes[i]}`);
+        group.forEach((el) => wrapper.append(el));
+        nav.append(wrapper);
+      });
+    }
+  }
 
   const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
-  if (brandLink) {
-    brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
+  if (navBrand) {
+    const brandLink = navBrand.querySelector('.button');
+    if (brandLink) {
+      brandLink.className = '';
+      brandLink.closest('.button-container')?.classList.remove('button-container');
+    }
   }
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+    navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {
@@ -213,9 +238,11 @@ export default async function decorate(block) {
 
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
-    const search = navTools.querySelector('a[href*="search"]');
-    if (search && search.textContent === '') {
-      search.setAttribute('aria-label', 'Search');
+    const toolLink = navTools.querySelector('a');
+    if (toolLink) {
+      toolLink.className = '';
+      const container = toolLink.closest('.button-container');
+      if (container) container.className = '';
     }
   }
 

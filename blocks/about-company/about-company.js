@@ -1,24 +1,30 @@
 export default async function decorate(block) {
+  // Block structure after EDS decoration (single row, two cells):
+  //   .about-company.block
+  //     div (row)
+  //       div (cell 0): background image (<p><picture><img></picture></p> or <p><img></p>)
+  //       div (cell 1): eyebrow <p>, <h2>, description <p>, CTA <p.button-container>
   const row = block.children[0];
   if (!row) return;
 
   const cells = [...row.children];
-  const imgCell = cells[0]; // background image cell
-  const textCell = cells[1]; // content card cell
+  const imgCell = cells[0];
+  const textCell = cells[1];
 
-  // Move image cell to be a direct child of block for full-section background
-  const picture = imgCell.querySelector('picture');
-  if (picture) {
+  // --- background image ---
+  if (imgCell) {
     imgCell.classList.add('about-company-bg');
     block.prepend(imgCell);
   }
 
-  // Add card class to text cell
+  // --- content card ---
   if (textCell) {
     textCell.classList.add('about-company-card');
-    block.append(textCell);
+    block.appendChild(textCell);
   }
 
-  // Remove the now-empty row
-  row.remove();
+  // Remove the now-empty row wrapper
+  if (row.parentNode) {
+    row.remove();
+  }
 }

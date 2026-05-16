@@ -1,0 +1,39 @@
+{
+  "variantName": "events-carousel",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-05-15T03:50:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.beckman.com/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "event-listing",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "header row (heading + see-all link) + event cards (image + badge + date + title link)",
+    "buttonCount": 1,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "event listing sections",
+      "upcoming events displays",
+      "horizontal scrolling card carousels"
+    ],
+    "notSuitableFor": [
+      "static grid layouts",
+      "non-event content carousels",
+      "image-only galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-15T03:50:00.000Z"
+  }
+}

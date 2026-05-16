@@ -5,11 +5,11 @@
 
 .service-promo {
   --sp-bg: #fafafa;
-  --sp-text: rgb(77, 77, 77);
-  --sp-heading-color: rgb(62, 62, 62);
+  --sp-text: rgb(77 77 77);
+  --sp-heading-color: rgb(62 62 62);
   --sp-primary: #d52331;
   --sp-card-bg: #fff;
-  --sp-card-border: rgba(224, 224, 224, 0.5);
+  --sp-card-border: rgb(224 224 224 / 50%);
   --sp-card-radius: 8px;
   --sp-card-padding: 24px;
 
@@ -49,6 +49,7 @@
   text-decoration: none;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .service-promo > div:first-child > div > p:last-child a:hover {
   text-decoration: underline;
 }
@@ -82,7 +83,7 @@
 .service-promo > div:nth-child(2) > div:hover,
 .service-promo > div:nth-child(3) > div:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
 }
 
 /* Icon in cards */
@@ -110,7 +111,7 @@
 .service-promo > div:nth-child(2) > div > p:nth-child(3),
 .service-promo > div:nth-child(3) > div > p:nth-child(3) {
   font-size: 14px;
-  color: rgb(100, 100, 100);
+  color: var(--sp-text);
   line-height: 1.6;
   margin: 0;
   flex-grow: 1;
@@ -123,9 +124,10 @@
   text-align: right;
 }
 
+/* stylelint-disable no-descending-specificity */
 .service-promo > div:nth-child(2) > div > p:last-child a,
 .service-promo > div:nth-child(3) > div > p:last-child a {
-  color: rgb(224, 224, 224);
+  color: rgb(224 224 224);
   font-size: 24px;
   font-weight: 300;
   text-decoration: none;
@@ -138,9 +140,11 @@
   color: var(--sp-primary);
   transform: translateX(4px);
 }
+/* stylelint-enable no-descending-specificity */
 
 /* Reset button styles for this block */
 main .service-promo .button-container { display: inline; }
+
 main .service-promo a.button:any-link {
   background: none;
   border: none;

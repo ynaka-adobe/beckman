@@ -1,21 +1,7 @@
-/* Override section container width for wider card grid */
-main > .section.insight-cards-container > div {
-  max-width: 1320px;
-}
-
-/* Section heading */
-.section.insight-cards-container h2 {
-  font-size: 39px;
-  font-weight: 300;
-  color: var(--text-color);
-  margin-bottom: 32px;
-  margin-top: 0;
-}
-
 .insight-cards {
-  --card-gap: 24px;
-  --category-color: rgb(213, 35, 49);
-  --card-text-color: rgb(77, 77, 77);
+  --card-gap: 20px;
+  --category-color: var(--brand-primary);
+  --card-text-color: var(--text-color);
 
   display: grid;
   grid-template-columns: 1fr;
@@ -44,6 +30,13 @@ main > .section.insight-cards-container > div {
   border-radius: 8px;
 }
 
+/* Reset <p> wrapper injected by EDS around bare images */
+.insight-cards > a > div > div:first-child p {
+  margin: 0;
+  height: 100%;
+  line-height: 0;
+}
+
 .insight-cards > a > div > div:first-child picture {
   display: block;
   height: 100%;
@@ -65,7 +58,7 @@ main > .section.insight-cards-container > div {
 
 /* Text cell */
 .insight-cards > a > div > div:last-child {
-  padding-top: 6px;
+  padding-top: 8px;
 }
 
 .insight-cards > a > div > div:last-child p:first-child {
@@ -102,22 +95,19 @@ main .insight-cards a.button:any-link {
   white-space: normal;
 }
 
-/* Hover state on description text */
-.insight-cards > a:hover > div > div:last-child p:last-child,
-.insight-cards > a:hover > div > div:last-child p:last-child span {
-  color: var(--category-color);
-}
-
 /* Underline animation on description */
 .insight-cards > a > div > div:last-child p:last-child span {
-  background-image: linear-gradient(currentColor, currentColor);
+  background-image: linear-gradient(currentcolor, currentcolor);
   background-size: 0% 1px;
   background-position: 0 100%;
   background-repeat: no-repeat;
   transition: background-size 0.5s, color 0.3s;
 }
 
+/* Hover state on description text */
+.insight-cards > a:hover > div > div:last-child p:last-child,
 .insight-cards > a:hover > div > div:last-child p:last-child span {
+  color: var(--category-color);
   background-size: 100% 1px;
 }
 
@@ -131,4 +121,18 @@ main .insight-cards a.button:any-link {
   .insight-cards {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+/* Section container override for wider card grid */
+/* stylelint-disable-next-line no-descending-specificity */
+main > .section.insight-cards-container > div {
+  max-width: 1320px;
+}
+
+.section.insight-cards-container h2 {
+  font-size: 39px;
+  font-weight: 300;
+  color: var(--text-color);
+  margin-bottom: 32px;
+  margin-top: 0;
 }

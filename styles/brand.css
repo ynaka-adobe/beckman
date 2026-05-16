@@ -1,12 +1,33 @@
 :root {
+  /* fonts */
   --heading-font-family: "Inter", system-ui, sans-serif;
   --body-font-family: "Inter", system-ui, sans-serif;
-  --background-color: #ffffff;
-  --text-color: rgb(77, 77, 77);
-  --link-color: rgb(0, 23, 38);
-  --link-hover-color: rgb(0, 23, 38);
-  --section-padding: 0px;
+
+  /* colors */
+  --background-color: #fff;
+  --text-color: rgb(77 77 77);
+  --text-color-light: rgb(62 62 62);
+  --text-color-lighter: rgb(128 127 127);
+  --link-color: rgb(0 23 38);
+  --link-hover-color: rgb(213 35 49);
+  --brand-primary: rgb(213 35 49);
+  --brand-primary-hover: rgb(185 28 40);
+  --light-color: rgb(244 244 244);
+  --off-white: rgb(250 250 250);
+  --dark-color: rgb(0 23 38);
+
+  /* spacing */
+  --section-padding: 64px;
+  --content-max-width: 1536px;
   --nav-height: 78px;
+
+  /* heading sizes */
+  --heading-font-size-xxl: 39px;
+  --heading-font-size-xl: 31px;
+  --heading-font-size-l: 20px;
+  --heading-font-size-m: 20px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
 }
 
 html, body { overflow: auto !important; }

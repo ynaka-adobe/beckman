@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.beckman.com/",
+  "path": "index",
+  "timestamp": "2026-05-15T04:11:54.147Z",
+  "title": "Beckman Coulter Life Sciences",
+  "template": "homepage",
+  "blocks": [
+    "hero",
+    "insight-cards",
+    "topics-nav",
+    "events-carousel",
+    "service-promo",
+    "about-company"
+  ]
+}

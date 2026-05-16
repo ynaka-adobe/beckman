@@ -1,0 +1,39 @@
+{
+  "variantName": "about-company",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-15T03:50:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.beckman.com/",
+    "originPage": "homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "grey",
+    "density": "spacious",
+    "purpose": "about-company-cta",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background image + overlay card (eyebrow + heading + description + CTA button)",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "about/company CTA sections",
+      "background-image with overlay card layouts",
+      "call-to-action sections with prominent background"
+    ],
+    "notSuitableFor": [
+      "simple hero banners",
+      "text-only CTA sections",
+      "multi-card layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-15T03:50:00.000Z"
+  }
+}

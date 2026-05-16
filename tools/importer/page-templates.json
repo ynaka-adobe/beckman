@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.beckman.com/"
+      ],
+      "description": "Beckman Coulter homepage with hero, product categories, and promotional content",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            ".relative.justify-end"
+          ]
+        },
+        {
+          "name": "insight-cards",
+          "instances": [
+            "#latest .grid"
+          ]
+        },
+        {
+          "name": "topics-nav",
+          "instances": [
+            "#topics .grid"
+          ]
+        },
+        {
+          "name": "events-carousel",
+          "instances": [
+            "#events"
+          ]
+        },
+        {
+          "name": "service-promo",
+          "instances": [
+            "#service > div"
+          ]
+        },
+        {
+          "name": "about-company",
+          "instances": [
+            "#about"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "hero",
+          "name": "Hero",
+          "selector": ".relative.justify-end",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "latest",
+          "name": "Fresh Insights",
+          "selector": "#latest",
+          "style": null,
+          "blocks": [
+            "insight-cards"
+          ],
+          "defaultContent": [
+            "#latest h2"
+          ]
+        },
+        {
+          "id": "topics",
+          "name": "Popular Topics",
+          "selector": ".gradient-section-background",
+          "style": "gradient",
+          "blocks": [
+            "topics-nav"
+          ],
+          "defaultContent": [
+            "#topics > div:first-child"
+          ]
+        },
+        {
+          "id": "diagnostics-banner",
+          "name": "Diagnostics Banner",
+          "selector": ".mx-auto.bg-brand-gray-50.p-2",
+          "style": "grey",
+          "blocks": [],
+          "defaultContent": [
+            ".mx-auto.bg-brand-gray-50.p-2 p"
+          ]
+        },
+        {
+          "id": "events",
+          "name": "Upcoming Events",
+          "selector": "#events",
+          "style": null,
+          "blocks": [
+            "events-carousel"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "service",
+          "name": "Service and Support",
+          "selector": "#service",
+          "style": "off-white",
+          "blocks": [
+            "service-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "about",
+          "name": "About Company",
+          "selector": "#about",
+          "style": null,
+          "blocks": [
+            "about-company"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

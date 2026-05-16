@@ -1,0 +1,39 @@
+{
+  "variantName": "topics-nav",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-15T03:50:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.beckman.com/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "topic-navigation",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "text link + arrow indicator",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "topic/category navigation grids",
+      "link tile grids without images",
+      "resource directory pages"
+    ],
+    "notSuitableFor": [
+      "cards with images",
+      "detailed content cards",
+      "product listings"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-15T03:50:00.000Z"
+  }
+}

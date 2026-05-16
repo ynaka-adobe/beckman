@@ -1,74 +1,95 @@
+/* Block: events-carousel -- Extracted from beckman.com source */
+
+/* Full-width wrapper override */
 .events-carousel-wrapper {
   max-width: 100% !important;
   padding: 0 !important;
 }
 
 .events-carousel {
-  --carousel-bg: #ffffff;
-  --carousel-text: rgb(77, 77, 77);
-  --carousel-heading-color: rgb(77, 77, 77);
-  --carousel-badge-gradient: linear-gradient(45deg, #762858, #d52331 34.62%, #d52331 82.86%, #ee4956);
-  --carousel-gap: 16px;
-  --carousel-padding: 64px 24px;
-
-  background: var(--carousel-bg);
-  color: var(--carousel-text);
-  padding: var(--carousel-padding);
+  background: var(--background-color);
+  color: var(--text-color);
+  padding: 48px 16px;
   max-width: 1400px;
   margin: 0 auto;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid rgb(224 224 224);
 }
 
-/* Header row: heading + see-all link */
+/* ---- Header row: heading + see-all link ---- */
 .events-carousel > div:first-child {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .events-carousel > div:first-child h2 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 300;
   margin: 0;
-  color: var(--carousel-heading-color);
+  color: var(--text-color);
   line-height: 1.2;
 }
 
-.events-carousel > div:first-child > div:last-child a {
+/* EDS wraps the <p><a> in .button-container; keep it inline */
+.events-carousel > div:first-child .button-container {
+  display: inline-flex;
+}
+
+.events-carousel > div:first-child .button-container p {
+  margin: 0;
+}
+
+/* "See all events" pill button -- override EDS button reset */
+main .events-carousel a.button:any-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgb(224, 224, 224);
-  color: var(--carousel-text);
+  gap: 6px;
+  background: rgb(224 224 224);
+  color: var(--text-color);
+  border: none;
   border-radius: 9999px;
-  padding: 14px 20px;
+  padding: 10px 18px;
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
+  white-space: nowrap;
+  margin: 0;
+  transition: background-color 0.2s ease;
 }
 
-.events-carousel > div:first-child > div:last-child a:hover {
-  background: rgb(200, 200, 200);
+main .events-carousel a.button:any-link:hover {
+  background: rgb(200 200 200);
   text-decoration: none;
 }
 
-/* Cards container */
+/* ---- Cards container (horizontal scroll) ---- */
 .events-carousel .cards-row {
   display: flex;
-  gap: var(--carousel-gap);
+  gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 8px;
+  scrollbar-width: thin;
 }
 
-/* Individual event card */
+/* Hide scrollbar on webkit */
+.events-carousel .cards-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.events-carousel .cards-row::-webkit-scrollbar-thumb {
+  background: rgb(200 200 200);
+  border-radius: 3px;
+}
+
+/* ---- Individual event card ---- */
 .events-carousel .event-card {
   flex: 0 0 288px;
   scroll-snap-align: start;
   text-decoration: none;
-  color: var(--carousel-text);
+  color: var(--text-color);
   display: block;
 }
 
@@ -76,15 +97,24 @@
   text-decoration: none;
 }
 
+/* ---- Card image container ---- */
 .events-carousel .event-card .card-image {
   position: relative;
-  aspect-ratio: 3/2;
+  aspect-ratio: 3 / 2;
   width: 100%;
   overflow: hidden;
   border-radius: 8px;
+  background-color: rgb(230 230 230);
+}
+
+.events-carousel .event-card .card-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .events-carousel .event-card .card-image img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -97,62 +127,64 @@
   filter: grayscale(0%);
 }
 
+/* ---- Badge overlay ---- */
 .events-carousel .event-card .badge {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--carousel-badge-gradient);
+  background: linear-gradient(45deg, #762858, #d52331 34.62%, #d52331 82.86%, #ee4956);
   color: #fff;
   padding: 8px 16px;
   border-radius: 4px;
   font-size: 13px;
+  font-weight: 600;
   white-space: nowrap;
   z-index: 2;
+  letter-spacing: 0.02em;
 }
 
+/* ---- Card date ---- */
 .events-carousel .event-card .card-date {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 0 4px;
+  padding: 10px 0 4px;
   font-size: 14px;
-  color: #d52331;
+  color: var(--brand-primary);
 }
 
+.events-carousel .event-card .card-date .calendar-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.events-carousel .event-card .card-date .calendar-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentcolor;
+}
+
+/* ---- Card title ---- */
 .events-carousel .event-card .card-title {
   font-size: 16px;
   font-weight: 400;
   margin: 0;
-  color: var(--carousel-text);
+  color: var(--text-color);
+  line-height: 1.4;
 }
 
-/* Override button styles for links in this block */
-main .events-carousel a.button:any-link {
-  background: rgb(224, 224, 224);
-  border: none;
-  color: var(--carousel-text);
-  font-size: 14px;
-  font-weight: 700;
-  padding: 14px 20px;
-  margin: 0;
-  text-decoration: none;
-  border-radius: 9999px;
-  white-space: nowrap;
-}
-
-main .events-carousel a.button:any-link:hover {
-  background: rgb(200, 200, 200);
-  text-decoration: none;
-}
-
-.events-carousel > div:first-child {
-  margin-bottom: 16px;
+/* ---- Responsive ---- */
+@media (width >= 600px) {
+  .events-carousel .event-card {
+    flex: 0 0 320px;
+  }
 }
 
 @media (width >= 900px) {
   .events-carousel {
-    --carousel-padding: 64px 32px;
+    padding: 64px 32px;
   }
 
   .events-carousel > div:first-child h2 {
@@ -160,6 +192,10 @@ main .events-carousel a.button:any-link:hover {
   }
 
   .events-carousel > div:first-child {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
+  }
+
+  .events-carousel .event-card {
+    flex: 0 0 360px;
   }
 }
