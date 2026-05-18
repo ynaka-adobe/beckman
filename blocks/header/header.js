@@ -184,12 +184,19 @@ export default async function decorate(block) {
   const nav = document.createElement('nav');
   nav.id = 'nav';
 
-  // Extract content from fragment. Split at <hr> into groups.
-  const section = fragment.querySelector('.section');
-  if (section) {
-    const dcw = section.querySelector('.default-content-wrapper');
+  // Extract content from fragment.
+  // Local dev: single .section with <hr> separators
+  // AEM: multiple .section elements (one per <hr>-separated group)
+  const sections = fragment.querySelectorAll('.section');
+  const groups = [];
+  if (sections.length > 1) {
+    sections.forEach((s) => {
+      const dcw = s.querySelector('.default-content-wrapper');
+      if (dcw) groups.push([...dcw.children]);
+    });
+  } else if (sections.length === 1) {
+    const dcw = sections[0].querySelector('.default-content-wrapper');
     if (dcw) {
-      const groups = [];
       let current = [];
       [...dcw.children].forEach((child) => {
         if (child.tagName === 'HR') {
@@ -200,74 +207,76 @@ export default async function decorate(block) {
         }
       });
       if (current.length) groups.push(current);
-
-      // Group 0: top bar (logo <p>, search text <p>, CTA <p>)
-      // Group 1: bottom bar (nav <ul>, utilities <ul>)
-      const topBarElements = groups[0] || [];
-      const bottomBarElements = groups[1] || [];
-
-      // --- Top row: logo + search + CTA ---
-      const topBar = document.createElement('div');
-      topBar.className = 'nav-top-bar';
-
-      const brand = document.createElement('div');
-      brand.className = 'nav-brand';
-
-      const search = document.createElement('div');
-      search.className = 'nav-search';
-
-      const cta = document.createElement('div');
-      cta.className = 'nav-cta';
-
-      topBarElements.forEach((el, i) => {
-        if (i === 0) brand.append(el);
-        else if (i === 1) search.append(el);
-        else if (i === 2) cta.append(el);
-      });
-
-      // Build search input from placeholder text
-      const searchP = search.querySelector('p');
-      if (searchP) {
-        const placeholder = searchP.textContent.trim();
-        searchP.innerHTML = `<span class="nav-search-icon">🔍</span><input type="search" placeholder="${placeholder}" aria-label="Search">`;
-      }
-
-      // Clean CTA button classes
-      const ctaLink = cta.querySelector('a');
-      if (ctaLink) {
-        ctaLink.className = '';
-        const container = ctaLink.closest('.button-container');
-        if (container) container.className = '';
-      }
-
-      topBar.append(brand, search, cta);
-      nav.append(topBar);
-
-      // --- Bottom row: nav sections + utilities ---
-      const bottomBar = document.createElement('div');
-      bottomBar.className = 'nav-bottom-bar';
-
-      const navSections = document.createElement('div');
-      navSections.className = 'nav-sections';
-
-      const navUtilities = document.createElement('ul');
-      navUtilities.className = 'nav-utilities';
-
-      bottomBarElements.forEach((el) => {
-        if (el.tagName === 'UL') {
-          // First <ul> = nav links, subsequent <ul> = utilities
-          if (!navSections.querySelector('ul')) {
-            navSections.append(el);
-          } else {
-            [...el.children].forEach((li) => navUtilities.append(li));
-          }
-        }
-      });
-
-      bottomBar.append(navSections);
-      if (navUtilities.children.length) bottomBar.append(navUtilities);
-      nav.append(bottomBar);
     }
+  }
+
+  if (groups.length) {
+    // Group 0: top bar (logo <p>, search text <p>, CTA <p>)
+    // Group 1: bottom bar (nav <ul>, utilities <ul>)
+    const topBarElements = groups[0] || [];
+    const bottomBarElements = groups[1] || [];
+
+    // --- Top row: logo + search + CTA ---
+    const topBar = document.createElement('div');
+    topBar.className = 'nav-top-bar';
+
+    const brand = document.createElement('div');
+    brand.className = 'nav-brand';
+
+    const search = document.createElement('div');
+    search.className = 'nav-search';
+
+    const cta = document.createElement('div');
+    cta.className = 'nav-cta';
+
+    topBarElements.forEach((el, i) => {
+      if (i === 0) brand.append(el);
+      else if (i === 1) search.append(el);
+      else if (i === 2) cta.append(el);
+    });
+
+    // Build search input from placeholder text
+    const searchP = search.querySelector('p');
+    if (searchP) {
+      const placeholder = searchP.textContent.trim();
+      searchP.innerHTML = `<span class="nav-search-icon">🔍</span><input type="search" placeholder="${placeholder}" aria-label="Search">`;
+    }
+
+    // Clean CTA button classes
+    const ctaLink = cta.querySelector('a');
+    if (ctaLink) {
+      ctaLink.className = '';
+      const container = ctaLink.closest('.button-container');
+      if (container) container.className = '';
+    }
+
+    topBar.append(brand, search, cta);
+    nav.append(topBar);
+
+    // --- Bottom row: nav sections + utilities ---
+    const bottomBar = document.createElement('div');
+    bottomBar.className = 'nav-bottom-bar';
+
+    const navSections = document.createElement('div');
+    navSections.className = 'nav-sections';
+
+    const navUtilities = document.createElement('ul');
+    navUtilities.className = 'nav-utilities';
+
+    bottomBarElements.forEach((el) => {
+      if (el.tagName === 'UL') {
+        // First <ul> = nav links, subsequent <ul> = utilities
+        if (!navSections.querySelector('ul')) {
+          navSections.append(el);
+        } else {
+          [...el.children].forEach((li) => navUtilities.append(li));
+        }
+      }
+    });
+
+    bottomBar.append(navSections);
+    if (navUtilities.children.length) bottomBar.append(navUtilities);
+    nav.append(bottomBar);
   }
 
   // Clean brand link
