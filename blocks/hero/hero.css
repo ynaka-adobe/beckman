@@ -10,35 +10,49 @@ main > .section:has(.hero-wrapper) {
 
 /* ---- hero block ---- */
 .hero {
+  /* Design artboard 1422×527 */
+  --hero-media-w: 1422;
+  --hero-media-h: 527;
+  --hero-image-max-w: 1422px;
+  --hero-min-h: clamp(280px, min(527px, calc(100vw * var(--hero-media-h) / var(--hero-media-w))), 527px);
+
+  --hero-red: #ea0029;
+  --hero-red-mid: rgb(200 10 48);
+  --hero-maroon: rgb(130 22 58);
+  --hero-plum: rgb(82 18 48);
+
   --hero-gradient: linear-gradient(
-    45deg,
-    rgb(118 40 88),
-    rgb(213 35 49) 34.62%,
-    rgb(213 35 49) 82.86%,
-    rgb(238 73 86)
+    118deg,
+    var(--hero-red) 0%,
+    var(--hero-red-mid) 22%,
+    var(--hero-maroon) 55%,
+    var(--hero-plum) 100%
   );
 
   position: relative;
   display: flex;
-  min-height: 400px;
+  min-height: var(--hero-min-h);
   overflow: hidden;
 }
 
-/* row */
 .hero > div {
   display: flex;
   width: 100%;
   flex-direction: column;
+  min-height: inherit;
 }
 
-/* ---- image cell (first cell) ---- */
+/* ---- image cell: left-aligned strip, up to 1422px wide, no gradient ---- */
 .hero > div > div:first-child {
   position: relative;
   width: 100%;
+  max-width: 100%;
   min-height: 260px;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  background: none;
 }
 
-/* EDS wraps bare <img> in <p> -- neutralise */
 .hero > div > div:first-child p {
   margin: 0;
   line-height: 0;
@@ -53,86 +67,88 @@ main > .section:has(.hero-wrapper) {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: left center;
   display: block;
+  filter: grayscale(1) contrast(1.05);
 }
 
-/* ---- text cell (last cell) ---- */
+/* ---- text cell ---- */
 .hero > div > div:last-child {
   background: var(--hero-gradient);
   color: #fff;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.5rem 2.25rem;
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
 }
 
 .hero > div > div:last-child h1 {
   font-family: var(--heading-font-family);
-  font-size: 2rem;
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
   font-weight: 200;
-  line-height: 1.1;
+  line-height: 1.12;
   letter-spacing: -0.02em;
-  margin: 0 0 0.75rem;
+  margin: 0 0 1rem;
   color: #fff;
+  text-align: left;
 }
 
 .hero > div > div:last-child p {
   font-family: var(--body-font-family);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 300;
-  line-height: 1.6;
-  color: #fde8ea;
+  line-height: 1.65;
+  color: #fff;
   margin: 0;
+  max-width: 38rem;
+  text-align: left;
 }
 
-/* ---- desktop ---- */
 @media (width >= 900px) {
   .hero {
-    min-height: 545px;
+    min-height: var(--hero-min-h);
   }
 
   .hero > div {
     flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    min-height: var(--hero-min-h);
   }
 
+  /* Left column: fixed 1422px cap, never wider than viewport */
   .hero > div > div:first-child {
-    position: absolute;
-    inset: 0;
-    width: 66%;
-    min-height: auto;
-    z-index: 0;
+    flex: 0 0 auto;
+    width: min(var(--hero-image-max-w), 100%);
+    max-width: min(var(--hero-image-max-w), 100%);
+    min-height: var(--hero-min-h);
+    align-self: stretch;
+    z-index: 2;
   }
 
   .hero > div > div:last-child {
-    position: relative;
-    margin-left: auto;
-    width: 42%;
-    padding: 3.5rem 3rem 3.5rem 5rem;
-    overflow: visible;
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    min-height: var(--hero-min-h);
+    padding: 3rem 3rem 3rem 3.5rem;
     z-index: 1;
-  }
-
-  /* curved left edge of gradient panel */
-  .hero > div > div:last-child::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -200px;
-    bottom: 0;
-    width: 260px;
-    background: var(--hero-gradient);
-    clip-path: ellipse(100% 54% at 100% 50%);
-    z-index: -1;
+    box-sizing: border-box;
+    position: relative;
   }
 
   .hero > div > div:last-child h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 3.6vw, 3.75rem);
+    font-weight: 200;
+    margin-bottom: 1.25rem;
   }
 
   .hero > div > div:last-child p {
     font-size: 16px;
     line-height: 1.7;
-    max-width: 90%;
+    max-width: 36rem;
   }
 }

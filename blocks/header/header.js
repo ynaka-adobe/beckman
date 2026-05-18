@@ -1,4 +1,4 @@
-import { fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
+import { decorateIcons, fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
@@ -239,7 +239,19 @@ export default async function decorate(block) {
     const searchP = search.querySelector('p');
     if (searchP) {
       const placeholder = searchP.textContent.trim();
-      searchP.innerHTML = `<span class="nav-search-icon">🔍</span><input type="search" placeholder="${placeholder}" aria-label="Search">`;
+      searchP.textContent = '';
+      const field = document.createElement('div');
+      field.className = 'nav-search-field';
+      const iconSpan = document.createElement('span');
+      iconSpan.className = 'icon icon-search';
+      iconSpan.setAttribute('aria-hidden', 'true');
+      const input = document.createElement('input');
+      input.type = 'search';
+      input.placeholder = placeholder;
+      input.setAttribute('aria-label', 'Search');
+      field.append(iconSpan, input);
+      searchP.append(field);
+      decorateIcons(search, '');
     }
 
     // Clean CTA button classes
@@ -292,6 +304,14 @@ export default async function decorate(block) {
   // Set up nav section dropdowns (hover + click)
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
+    // decorateButtons() adds a.button outside <main>; strip so menu items are not red pills
+    navSections.querySelectorAll('a').forEach((a) => {
+      a.classList.remove('button', 'primary', 'secondary');
+      const wrap = a.closest('.button-container');
+      if (wrap && navSections.contains(wrap)) {
+        wrap.classList.remove('button-container');
+      }
+    });
     navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
       navSection.addEventListener('click', () => {
